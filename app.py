@@ -1,13 +1,13 @@
 # streamlit_app.py
 
 import streamlit as st
-import mysql.connector
+import mysql.connector as mysql
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
 @st.experimental_singleton
 def init_connection():
-    return mysql.connector.connect(**st.secrets["mysql"])
+    return mysql.connect(**st.secrets["mysql"])
 
 conn = init_connection()
 
